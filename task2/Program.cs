@@ -2,6 +2,8 @@
 {
     private static void Main(string[] args)
     {
+        try
+        {
         Console.Clear();                                                    // Вариант для ввода через пробел с функцией .Split 
         Console.WriteLine("Enter coordinates of the first point (x y z): ");
         //                                                                  // string[] strA = Console.ReadLine().Split(' ');
@@ -15,5 +17,10 @@
         int zb = Convert.ToInt32(Console.ReadLine());                       // int zb = Convert.ToInt32(strB[2]);
         double distance = Math.Sqrt(Math.Pow(xb - xa, 2) + Math.Pow(yb - ya, 2) + Math.Pow(zb - za, 2));
         Console.WriteLine($"Distance = {distance}");
+        }
+        catch
+        {
+        Console.WriteLine("Incorrect data try enter integer numbers");
+        }
     }
 }
